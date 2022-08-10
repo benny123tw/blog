@@ -8,17 +8,11 @@ import {
 } from "https://deno.land/std@0.149.0/testing/asserts.ts";
 // import { fromFileUrl, join } from "https://deno.land/std@0.149.0/path/mod.ts";
 
-// import { blogSettings } from "./main.tsx";
+import { blogSettings } from "./settings.tsx";
 
 const BLOG_URL = new URL("./main.js", import.meta.url).href;
 // const TESTDATA_PATH = fromFileUrl(new URL(import.meta.url));
-const BLOG_SETTINGS = await configureBlog(BLOG_URL, false, {
-  author: "The author",
-  title: "Test blog",
-  description: "This is some description.",
-  lang: "en-GB",
-  dateStyle: "medium",
-});
+const BLOG_SETTINGS = await configureBlog(BLOG_URL, false, blogSettings);
 const CONN_INFO = {
   localAddr: {
     transport: "tcp" as const,
@@ -43,9 +37,9 @@ Deno.test("index page", async () => {
   assertEquals(resp.status, 200);
   assertEquals(resp.headers.get("content-type"), "text/html; charset=utf-8");
   const body = await resp.text();
-  assertStringIncludes(body, `<html lang="en-GB">`);
-  assertStringIncludes(body, `Test blog`);
-  assertStringIncludes(body, `This is some description.`);
+  // assertStringIncludes(body, `<html lang="en-GB">`);
+  assertStringIncludes(body, `Benny's Blog`);
+  assertStringIncludes(body, `My personal blog`);
   assertStringIncludes(body, `href="/hello_world"`);
   // assertStringIncludes(body, `href="/second"`);
 });
