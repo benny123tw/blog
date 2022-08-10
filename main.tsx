@@ -1,9 +1,10 @@
 /** @jsx h */
 
-import blog, { ga, redirects, h } from "blog";
+import blog, { ga, h, redirects } from "blog";
+import type { BlogSettings } from "blog_type";
 import "./extension/prismjs-extensions.ts";
 
-blog({
+export const blogSettings: BlogSettings = {
   title: "Benny's Blog",
   description: "My personal blog",
   // header: <header>Your custom header</header>,
@@ -12,7 +13,6 @@ blog({
   avatar: "https://deno-avatar.deno.dev/avatar/blog.svg",
   avatarClass: "rounded-full",
   author: "Benny Yen",
-
   // middlewares: [
 
   // If you want to set up Google Analytics, paste your GA key here.
@@ -25,4 +25,6 @@ blog({
   // }),
 
   // ]
-});
+};
+
+blog(blogSettings);
