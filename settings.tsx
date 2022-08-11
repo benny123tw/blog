@@ -1,14 +1,25 @@
+import { ga } from "blog";
 import type { BlogSettings } from "blog_type";
+
+const description =
+  `Hi I'm Benny! I'm an QA engineer and I'm a big fan of TypeScript.`;
 
 export const blogSettings: BlogSettings = {
   title: "Benny's Blog",
-  description: "My personal blog",
-  // header: <header>Your custom header</header>,
-  // section: <section>Your custom section</section>,
-  // footer: <footer>Your custom footer</footer>,
-  avatar: "https://deno-avatar.deno.dev/avatar/blog.svg",
+  description,
+  lang: "zh-tw",
+  dateStyle: "full",
+  favicon: "./static/favicon.png",
+  avatar: "./static/momosuzu-nene-nene.gif",
   avatarClass: "rounded-full",
   author: "Benny Yen",
+  links: [
+    { title: "benny123tw@gmail.com", url: "mailto:benny123tw@gmail.com" },
+    { title: "GitHuFb", url: "https://github.com/benny123tw" },
+    { title: "Twitter", url: "https://twitter.com/BennyYen2" },
+    { title: "Instagram", url: "https://instagram.com/benny123tw" },
+  ],
+
   // middlewares: [
 
   // If you want to set up Google Analytics, paste your GA key here.
@@ -21,4 +32,5 @@ export const blogSettings: BlogSettings = {
   // }),
 
   // ]
+  middleware: [ga("G-9VKSH9VEQH")],
 };

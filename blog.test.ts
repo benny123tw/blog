@@ -37,7 +37,10 @@ Deno.test("index page", async () => {
   const body = await resp.text();
   // assertStringIncludes(body, `<html lang="en-GB">`);
   assertStringIncludes(body, `Benny's Blog`);
-  assertStringIncludes(body, `My personal blog`);
+  assertStringIncludes(
+    body,
+    `Hi I'm Benny! I'm an QA engineer and I'm a big fan of TypeScript.`,
+  );
   assertStringIncludes(body, `href="/hello_world"`);
-  // assertStringIncludes(body, `href="/second"`);
+  assertStringIncludes(body, `href="/dynamic-test"`);
 });
