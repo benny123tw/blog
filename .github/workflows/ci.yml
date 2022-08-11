@@ -29,28 +29,29 @@ jobs:
       - name: Run tests
         run: deno test -A --unstable
 
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    needs: test
-    if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
-    permissions:
-      id-token: write # Needed for auth with Deno Deploy
-      contents: read # Needed to clone the repository
+  # deploy:
+  #   name: Deploy
+  #   runs-on: ubuntu-latest
+  #   needs: test
+  #   if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
+  #   if: github.ref == 'refs/heads/master'
+  #   permissions:
+  #     id-token: write # Needed for auth with Deno Deploy
+  #     contents: read # Needed to clone the repository
 
-    steps:
-      - name: Setup repo
-        uses: actions/checkout@v3
+  #   steps:
+  #     - name: Setup repo
+  #       uses: actions/checkout@v3
 
-      - name: Setup Deno
-        # uses: denoland/setup-deno@v1
-        uses: denoland/setup-deno@004814556e37c54a2f6e31384c9e18e983317366
-        with:
-          deno-version: v1.x
+  #     - name: Setup Deno
+  #       # uses: denoland/setup-deno@v1
+  #       uses: denoland/setup-deno@004814556e37c54a2f6e31384c9e18e983317366
+  #       with:
+  #         deno-version: v1.x
 
-      - name: Upload to Deno Deploy
-        uses: denoland/deployctl@v1
-        with:
-          project: "benny123tw-blog"
-          entrypoint: "./main.tsx" 
-          import-map: import_map.json
+  #     - name: Upload to Deno Deploy
+  #       uses: denoland/deployctl@v1
+  #       with:
+  #         project: "benny123tw-blog"
+  #         entrypoint: "./main.tsx" 
+  #         import-map: import_map.json
