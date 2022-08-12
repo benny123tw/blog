@@ -8,6 +8,10 @@ import {
 
 import { blogSettings } from "./settings.tsx";
 
+if (blogSettings.middlewares?.length) {
+  delete blogSettings.middlewares;
+}
+
 const BLOG_URL = new URL("./main.js", import.meta.url).href;
 // const TESTDATA_PATH = fromFileUrl(new URL(import.meta.url));
 const BLOG_SETTINGS = await configureBlog(BLOG_URL, false, blogSettings);
