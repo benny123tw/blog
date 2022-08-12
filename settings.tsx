@@ -9,8 +9,8 @@ export const blogSettings: BlogSettings = {
   description,
   lang: "zh-tw",
   dateStyle: "full",
-  favicon: "./static/favicon.png",
-  avatar: "./static/momosuzu-nene-nene.gif",
+  favicon: "/static/favicon.png",
+  avatar: "/static/momosuzu-nene.gif",
   avatarClass: "rounded-full",
   author: "Benny Yen",
   links: [

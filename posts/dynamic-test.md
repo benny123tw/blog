@@ -5,6 +5,12 @@ snippet: How to dynamic generate test in Cypress.io?
 tags: [cypress, javascript, typescript]
 ---
 
+## 使用時機
+
+當有多個項目需要測試，並且測試內容大致相同
+
+## 使用方法
+
 使用 `forEach()` 動態生成測試項目
 
 ```ts
@@ -28,11 +34,3 @@ describe("Performance Test", () => {
   });
 });
 ```
-
-## 使用時機
-
-當有多個項目需要測試，並且測試內容大致相同
-
-## 為什麼不用 for...loop?
-
-Cypress 在開始測試之前會檢查所有的程式碼，找出需要測試的測項，傳統的 `for...loop`
