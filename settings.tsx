@@ -19,7 +19,6 @@ export const blogSettings: BlogSettings = {
     { title: "Twitter", url: "https://twitter.com/BennyYen2" },
     { title: "Instagram", url: "https://instagram.com/benny123tw" },
   ],
-
   // middlewares: [
 
   // If you want to set up Google Analytics, paste your GA key here.
@@ -32,5 +31,5 @@ export const blogSettings: BlogSettings = {
   // }),
 
   // ]
-  middleware: [ga("G-9VKSH9VEQH")],
+  middlewares: [ga("G-9VKSH9VEQH")],
 };
