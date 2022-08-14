@@ -39,12 +39,12 @@ Deno.test("index page", async () => {
   assertEquals(resp.status, 200);
   assertEquals(resp.headers.get("content-type"), "text/html; charset=utf-8");
   const body = await resp.text();
-  // assertStringIncludes(body, `<html lang="en-GB">`);
+  assertStringIncludes(body, `<html lang="zh-tw">`);
   assertStringIncludes(body, `Benny's Blog`);
   assertStringIncludes(
     body,
     `Hi I'm Benny! I'm an QA engineer and I'm a big fan of TypeScript.`,
   );
-  assertStringIncludes(body, `href="/hello_world"`);
-  assertStringIncludes(body, `href="/dynamic-test"`);
+  assertStringIncludes(body, `href="/cypress-generate-dynamic-test"`);
+  assertStringIncludes(body, `href="/cypress-dynamic-import-plugin-class"`);
 });

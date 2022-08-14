@@ -36,7 +36,7 @@ describe("Performance Test", () => {
 
 在`Cypress`上可以看到總共有兩個 test：
 
-![Cypress Spec](./dynamic-test/cypress_spec.png)
+![Cypress Spec](./cypress-generate-dynamic-test/cypress_spec.png)
 
 ## 為什麼不將 `for` 寫在 `it` 裡面呢?
 
