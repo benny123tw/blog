@@ -1,6 +1,9 @@
 {
   "imports": {
     "blog": "https://deno.land/x/blog@0.4.2/blog.tsx",
-    "blog_type": "https://deno.land/x/blog@0.4.2/types.d.ts"
+    "blog_type": "https://deno.land/x/blog@0.4.2/types.d.ts",
+    "preact": "https://esm.sh/preact@10.10.2",
+    "preact/": "https://esm.sh/preact@10.10.2/",
+    "$std/": "https://deno.land/std@0.152.0/"
   }
 }

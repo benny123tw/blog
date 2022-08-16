@@ -130,7 +130,7 @@ export default defineConfig({
 
 ## 載入 type
 
-到以上的步驟是可以直接調用 `cy.task` 的，但是爲了要讓 VSCode 的 IntelliSense 發揮作用就必須宣告 types：
+到以上的步驟是可以直接調用 `cy.task` 的，但是爲了要讓 VSCode 的 IntelliSense 發揮作用就必須定義 types：
 
 ```ts
 // global.d.ts
