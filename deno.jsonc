@@ -1,8 +1,21 @@
 {
   "tasks": {
-    "dev": "deno run --allow-net --allow-read --allow-env --watch main.tsx --dev",
-    "serve": "deno run --allow-net --allow-read --allow-env --no-check main.tsx",
-    "test": "deno test --no-check=remote --allow-read"
+    "dev": "deno run --unsafely-ignore-certificate-errors --allow-net --allow-read --allow-env --watch main.tsx --dev",
+    "serve": "deno run --unsafely-ignore-certificate-errors --allow-net --allow-read --allow-env --no-check main.tsx",
+    "test": "deno test --unsafely-ignore-certificate-errors --no-check=remote --allow-read"
   },
-  "importMap": "./import_map.json"
+  "importMap": "./import_map.json",
+  "lint": {
+    "rules": {
+      "tags": ["recommended"],
+      "include": ["ban-untagged-todo"]
+    }
+  },
+  "options": {
+    "useTabs": true,
+    "lineWidth": 80,
+    "indentWidth": 4,
+    "singleQuote": true,
+    "proseWrap": "preserve"
+  }
 }

@@ -34,7 +34,7 @@ export const hasOperationName = (
 };
 
 // Alias query if operationName matches
-export const aliasQuery = (operationName: string) => {
+export const aliasGql = (operationName: string) => {
   return cy.intercept("POST", "/graphql", (req) => {
     if (hasOperationName(req, operationName)) {
       req.alias = getAliasName(operationName);
@@ -52,13 +52,20 @@ export const aliasQuery = (operationName: string) => {
 import { hasOperationName } from "./utils/intercept-utils";
 
 Cypress.Commands.add("interceptGql", (operationName, response) => {
+  if (!response) return;
+
   return cy.intercept("POST", "/graphql", (req) => {
-    switch (typeof response) {
-      case "function":
-        hasOperationName(req, operationName) && response(req);
-        break;
-      default:
-        hasOperationName(req, operationName) && req.reply(response);
+    if (hasOperationName(req, operationName)) {
+      switch (typeof response) {
+        case "function": {
+          response(req);
+          break;
+        }
+        default: {
+          req.reply(response);
+          break;
+        }
+      }
     }
   });
 });
@@ -84,11 +91,11 @@ declare namespace Cypress {
 ```ts
 // e2e/spec.ts
 
-import { aliasQuery } from "./support/utils/intercept-utils";
+import { aliasGql } from "./support/utils/intercept-utils";
 
 describe("intercept gql", () => {
   beforeEach(() => {
-    aliasQuery("queryProjects");
+    aliasGql("queryProjects");
   });
 
   it("query project and wait", () => {
