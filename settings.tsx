@@ -16,7 +16,7 @@ export const blogSettings: BlogSettings = {
   links: [
     { title: "benny123tw@gmail.com", url: "mailto:benny123tw@gmail.com" },
     { title: "GitHuFb", url: "https://github.com/benny123tw" },
-    { title: "Twitter", url: "https://twitter.com/BennyYen2" },
+    { title: "Twitter", url: "https://twitter.com/benny123tw" },
     { title: "Instagram", url: "https://instagram.com/benny123tw" },
   ],
   // middlewares: [
