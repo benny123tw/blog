@@ -1,5 +1,8 @@
-import { ga } from "blog";
+/** @jsx h */
+import { ga, h } from "blog";
 import type { BlogSettings } from "blog_type";
+import Footer from "./components/Footer.tsx";
+import PostFooter from "./components/PostFooter.tsx";
 
 const description =
   `Hi I'm Benny! I'm an QA engineer and I'm a big fan of TypeScript.`;
@@ -15,8 +18,8 @@ export const blogSettings: BlogSettings = {
   author: "Benny Yen",
   links: [
     { title: "benny123tw@gmail.com", url: "mailto:benny123tw@gmail.com" },
-    { title: "GitHuFb", url: "https://github.com/benny123tw" },
-    { title: "Twitter", url: "https://twitter.com/BennyYen2" },
+    { title: "GitHub", url: "https://github.com/benny123tw" },
+    { title: "Twitter", url: "https://twitter.com/benny123tw" },
     { title: "Instagram", url: "https://instagram.com/benny123tw" },
   ],
   // middlewares: [
