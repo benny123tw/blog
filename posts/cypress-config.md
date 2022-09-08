@@ -14,4 +14,3 @@ tags: [cypress, javascript, typescript]
 ## Prettier
 
 ## Husky
-
